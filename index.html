@@ -1,51 +1,461 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Benjie Borinaga | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: sans-serif;
-      background-color: #f8f8f8;
-      padding: 2rem;
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h1 {
-      color: #28a745;
-    }
-    a {
-      color: #0077cc;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio showcasing web development, design, and creative projects">
+    <meta name="keywords" content="web developer, designer, portfolio, HTML, CSS, JavaScript, frontend">
+    <meta name="author" content="Your Name">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>Benjie Borinaga</h1>
-    <p>BSIT Graduate | Aspiring Software Developer</p>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Portfolio</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
-    <h2>💧 Water Refilling Management System</h2>
-    <p>Mobile app using Flutter + PHP for water station automation.</p>
-    <a href="https://github.com/bench-b/water_refilling">GitHub Repo</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-greeting">Hello, I'm</span>
+                    <span class="hero-name">Alex Johnson</span>
+                    <span class="hero-role">Creative Developer & Designer</span>
+                </h1>
+                <p class="hero-description">
+                    I craft beautiful digital experiences through innovative web development and thoughtful design. 
+                    Passionate about creating user-centered solutions that make a difference.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <div class="hero-image-placeholder">
+                        <span>Professional Photo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
 
-    <h2>🔧 Skills</h2>
-    <ul>
-      <li>Flutter / Dart</li>
-      <li>PHP & MySQL</li>
-      <li>.NET MAUI</li>
-      <li>Git / GitHub</li>
-    </ul>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Passionate about creating digital experiences that matter</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        With over 5 years of experience in web development and design, I specialize in creating 
+                        modern, responsive websites and applications that deliver exceptional user experiences.
+                    </p>
+                    <p class="about-description">
+                        My journey began with a fascination for how technology can solve real-world problems. 
+                        Today, I combine technical expertise with creative vision to build digital solutions 
+                        that are both functional and beautiful.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-skills">
+                    <h3 class="skills-title">Skills & Technologies</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Frontend</h4>
+                            <ul>
+                                <li>HTML5 & CSS3</li>
+                                <li>JavaScript (ES6+)</li>
+                                <li>React & Vue.js</li>
+                                <li>TypeScript</li>
+                                <li>Sass/SCSS</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Backend</h4>
+                            <ul>
+                                <li>Node.js</li>
+                                <li>Python</li>
+                                <li>Express.js</li>
+                                <li>MongoDB</li>
+                                <li>PostgreSQL</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Design</h4>
+                            <ul>
+                                <li>Figma</li>
+                                <li>Adobe Creative Suite</li>
+                                <li>UI/UX Design</li>
+                                <li>Prototyping</li>
+                                <li>Responsive Design</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Tools</h4>
+                            <ul>
+                                <li>Git & GitHub</li>
+                                <li>Webpack</li>
+                                <li>Docker</li>
+                                <li>AWS</li>
+                                <li>Vercel</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-outline download-cv">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h2>📫 Contact</h2>
-    <p>Email: benjie@example.com</p>
-  </div>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Portfolio</h2>
+                <p class="section-subtitle">A showcase of my recent work and projects</p>
+            </div>
+            
+            <!-- Portfolio Filter -->
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="design">UI/UX Design</button>
+                <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <div class="project-placeholder">E-commerce Platform</div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>E-commerce Platform</h3>
+                                <p>Full-stack web application</p>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">View Project</a>
+                                    <a href="#" class="portfolio-link">Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="portfolio-item" data-category="design">
+                    <div class="portfolio-image">
+                        <div class="project-placeholder">Mobile App Design</div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Mobile App Design</h3>
+                                <p>UI/UX Design for fitness app</p>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">View Project</a>
+                                    <a href="#" class="portfolio-link">Prototype</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <div class="project-placeholder">Portfolio Website</div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Portfolio Website</h3>
+                                <p>Responsive portfolio design</p>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">View Project</a>
+                                    <a href="#" class="portfolio-link">Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="portfolio-item" data-category="mobile">
+                    <div class="portfolio-image">
+                        <div class="project-placeholder">React Native App</div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>React Native App</h3>
+                                <p>Cross-platform mobile application</p>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">View Project</a>
+                                    <a href="#" class="portfolio-link">App Store</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="portfolio-item" data-category="design">
+                    <div class="portfolio-image">
+                        <div class="project-placeholder">Brand Identity</div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Brand Identity</h3>
+                                <p>Complete branding solution</p>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">View Project</a>
+                                    <a href="#" class="portfolio-link">Case Study</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <div class="project-placeholder">Dashboard UI</div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Dashboard UI</h3>
+                                <p>Analytics dashboard interface</p>
+                                <div class="portfolio-links">
+                                    <a href="#" class="portfolio-link">View Project</a>
+                                    <a href="#" class="portfolio-link">Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Services</h2>
+                <p class="section-subtitle">What I can do for you</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3 class="service-title">Web Development</h3>
+                    <p class="service-description">
+                        Custom websites and web applications built with modern technologies 
+                        and best practices for optimal performance and user experience.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3 class="service-title">UI/UX Design</h3>
+                    <p class="service-description">
+                        User-centered design solutions that combine aesthetics with functionality 
+                        to create intuitive and engaging digital experiences.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3 class="service-title">Mobile Development</h3>
+                    <p class="service-description">
+                        Cross-platform mobile applications using React Native and Flutter 
+                        for iOS and Android platforms.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3 class="service-title">Performance Optimization</h3>
+                    <p class="service-description">
+                        Website speed optimization, SEO improvements, and technical audits 
+                        to enhance your digital presence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Clients Say</h2>
+                <p class="section-subtitle">Testimonials from satisfied clients</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Alex delivered an exceptional website that exceeded our expectations. 
+                        The attention to detail and user experience is outstanding."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <span>CEO, TechStart Inc.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Working with Alex was a pleasure. Professional, creative, and always 
+                        delivered on time. Highly recommended!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <span>Founder, Design Studio</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The mobile app Alex developed for us has been a game-changer. 
+                        User engagement increased by 300% since launch."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Emily Rodriguez</h4>
+                            <span>Product Manager, AppCorp</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's work together on your next project</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's start a conversation</h3>
+                    <p>I'm always interested in new opportunities and exciting projects. 
+                    Whether you have a question or just want to say hi, feel free to reach out!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <div>
+                                <h4>Email</h4>
+                                <p>alex.johnson@email.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <h4>Location</h4>
+                                <p>San Francisco, CA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">Behance</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Alex Johnson. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -282,9 +282,11 @@ function initTypingAnimation() {
     
     const roles = [
         'Creative Developer & Designer',
+        'Programmer',
         'Frontend Specialist',
         'UI/UX Enthusiast',
-        'Problem Solver'
+        'Problem Solver',
+        'Technical Support'
     ];
     
     let currentRole = 0;

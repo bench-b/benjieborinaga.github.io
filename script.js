@@ -511,17 +511,18 @@ function initPortfolioModal() {
   });
 
   function showImage(index) {
-    modalImage.src = images[index];
+    if (index < 0) index = images.length - 1; // wrap around left
+    if (index >= images.length) index = 0;    // wrap around right
+    currentIndex = index;
+    modalImage.src = images[currentIndex];
   }
 
   prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
+    showImage(currentIndex - 1);
   });
 
   nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
+    showImage(currentIndex + 1);
   });
 
   closeBtn.addEventListener("click", () => modal.classList.add("hidden"));
@@ -529,8 +530,22 @@ function initPortfolioModal() {
   modal.addEventListener("click", e => {
     if (e.target === modal) modal.classList.add("hidden");
   });
+
+  // ✅ Keyboard navigation (moved inside)
+  document.addEventListener("keydown", (e) => {
+    if (modal.classList.contains("hidden")) return; // do nothing if closed
+
+    if (e.key === "ArrowLeft") {
+      showImage(currentIndex - 1);
+    } else if (e.key === "ArrowRight") {
+      showImage(currentIndex + 1);
+    } else if (e.key === "Escape") {
+      modal.classList.add("hidden"); // allow ESC to close
+    }
+  });
 }
 
 document.addEventListener("DOMContentLoaded", initPortfolioModal);
+
 
 

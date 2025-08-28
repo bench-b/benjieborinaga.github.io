@@ -482,3 +482,55 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+
+function initPortfolioModal() {
+  const modal = document.getElementById("portfolioModal");
+  const modalImage = document.getElementById("modalImage");
+  const modalCaption = document.getElementById("modalCaption");
+  const closeBtn = document.querySelector(".close-modal");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  let images = [];
+  let currentIndex = 0;
+
+  document.querySelectorAll(".view-details").forEach(link => {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      // Split multiple images into array
+      images = this.dataset.images.split(",");
+      currentIndex = 0;
+
+      showImage(currentIndex);
+
+      modalCaption.textContent = this.dataset.caption;
+      modal.classList.remove("hidden");
+    });
+  });
+
+  function showImage(index) {
+    modalImage.src = images[index];
+  }
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  });
+
+  closeBtn.addEventListener("click", () => modal.classList.add("hidden"));
+
+  modal.addEventListener("click", e => {
+    if (e.target === modal) modal.classList.add("hidden");
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initPortfolioModal);
+
+

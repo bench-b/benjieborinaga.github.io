@@ -605,5 +605,33 @@ document.addEventListener("DOMContentLoaded", initPortfolioModal);
 
 
 
+//for api
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault(); // stop normal form submit
+
+  let formData = new FormData(this);
+
+  fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData
+  })
+  .then(async (response) => {
+    let result = await response.json();
+    console.log(result); // ✅ log response in console
+
+    if (result.success) {
+      alert("✅ Message sent successfully!");
+      this.reset();
+    } else {
+      alert("❌ Failed: " + result.message);
+    }
+  })
+  .catch(error => {
+    console.error("Error:", error);
+    alert("❌ Something went wrong. Check console.");
+  });
+});
+
+
 
 

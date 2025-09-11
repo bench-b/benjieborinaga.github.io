@@ -487,6 +487,8 @@ document.head.appendChild(style);
 function initPortfolioModal() {
   const modal = document.getElementById("portfolioModal");
   const modalImage = document.getElementById("modalImage");
+  const modalVideo = document.getElementById("modalVideo");
+  const videoProgress = document.getElementById("videoProgress"); // ✅ slider
   const modalCaption = document.getElementById("modalCaption");
   const closeBtn = document.querySelector(".close-modal");
   const prevBtn = document.getElementById("prevBtn");
@@ -514,38 +516,92 @@ function initPortfolioModal() {
     if (index < 0) index = images.length - 1; // wrap around left
     if (index >= images.length) index = 0;    // wrap around right
     currentIndex = index;
-    modalImage.src = images[currentIndex];
+
+    const src = images[currentIndex].trim();
+
+    // Reset display
+    modalImage.style.display = "none";
+    modalVideo.style.display = "none";
+    videoProgress.style.display = "none";
+    modalVideo.pause();
+
+    // Show video if it's .mp4
+    if (src.endsWith(".mp4")) {
+      modalVideo.src = src;
+      modalVideo.style.display = "block";
+      videoProgress.style.display = "block";
+      modalVideo.play();
+    } else {
+      modalImage.src = src;
+      modalImage.style.display = "block";
+    }
   }
 
-  prevBtn.addEventListener("click", () => {
-    showImage(currentIndex - 1);
-  });
+  prevBtn.addEventListener("click", () => showImage(currentIndex - 1));
+  nextBtn.addEventListener("click", () => showImage(currentIndex + 1));
 
-  nextBtn.addEventListener("click", () => {
-    showImage(currentIndex + 1);
+  closeBtn.addEventListener("click", () => {
+    modal.classList.add("hidden");
+    modalVideo.pause();
   });
-
-  closeBtn.addEventListener("click", () => modal.classList.add("hidden"));
 
   modal.addEventListener("click", e => {
-    if (e.target === modal) modal.classList.add("hidden");
+    if (e.target === modal) {
+      modal.classList.add("hidden");
+      modalVideo.pause();
+    }
   });
 
-  // ✅ Keyboard navigation (moved inside)
+  // ✅ Keyboard navigation + space for play/pause
   document.addEventListener("keydown", (e) => {
-    if (modal.classList.contains("hidden")) return; // do nothing if closed
+    if (modal.classList.contains("hidden")) return;
 
     if (e.key === "ArrowLeft") {
       showImage(currentIndex - 1);
     } else if (e.key === "ArrowRight") {
       showImage(currentIndex + 1);
     } else if (e.key === "Escape") {
-      modal.classList.add("hidden"); // allow ESC to close
+      modal.classList.add("hidden");
+      modalVideo.pause();
+    } else if (e.code === "Space") { 
+      // toggle play/pause if video is visible
+      if (modalVideo.style.display === "block") {
+        if (modalVideo.paused) {
+          modalVideo.play();
+        } else {
+          modalVideo.pause();
+        }
+        e.preventDefault(); // prevent page scroll
+      }
+    }
+  });
+  // ✅ Click-to-toggle play/pause on video
+  modalVideo.addEventListener("click", () => {
+    if (modalVideo.paused) {
+      modalVideo.play();
+    } else {
+      modalVideo.pause();
+    }
+  });
+
+  // ✅ Sync progress bar with video
+  modalVideo.addEventListener("timeupdate", () => {
+    if (!isNaN(modalVideo.duration)) {
+      videoProgress.value = (modalVideo.currentTime / modalVideo.duration) * 100;
+    }
+  });
+
+  // ✅ Seek when user moves slider
+  videoProgress.addEventListener("input", () => {
+    if (!isNaN(modalVideo.duration)) {
+      modalVideo.currentTime = (videoProgress.value / 100) * modalVideo.duration;
     }
   });
 }
 
 document.addEventListener("DOMContentLoaded", initPortfolioModal);
+
+
 
 
 

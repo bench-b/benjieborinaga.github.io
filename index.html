@@ -88,7 +88,8 @@
                 <div class="about-text">
                     <p class="about-intro">
                         A BS Information Technology graduate with hands-on training and experience in technical support.
-                        Proficient in PHP, HTML, CSS, JavaScript, and Flutter, with knowledge acquired through academic
+                        Proficient in Python, PHP, HTML, CSS, JavaScript, and Flutter, with knowledge acquired through
+                        academic
                         projects.
                     </p>
                     <p class="about-description">
@@ -118,11 +119,12 @@
                     <h3 class="skills-title">Skills & Technologies</h3>
                     <div class="skills-grid">
                         <div class="skill-category">
-                            <h4>Frontend</h4>
+                            <h4>Frontend/Backend</h4>
                             <ul>
                                 <li>HTML & CSS</li>
                                 <li>JavaScript</li>
                                 <li>PHP</li>
+                                <li>Python</li>
                                 <li>Responsive Design</li>
                                 <li>User Interface Design</li>
                             </ul>
@@ -151,9 +153,9 @@
                             <ul>
                                 <li>Database Management</li>
                                 <li>System Analysis & Design</li>
-                                <li>Problem Solving</li>
-                                <li>Quick Learning</li>
-                                <li>Adaptability</li>
+                                <li>Big Data Analytics</li>
+                                <li>Artificial Intelligence</li>
+                                <li>Data Modelling</li>
                             </ul>
                         </div>
                     </div>
@@ -291,56 +293,49 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <!-- <section class="testimonials">
+    <!-- Documentary Section -->
+    <section class="documentary">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">What Clients Say</h2>
-                <p class="section-subtitle">Testimonials from satisfied clients</p>
+                <h2 class="section-title">DOCUMENTARY</h2>
+                <p class="section-subtitle">TRAININGS AND CERTIFICATIONS</p>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Benjie demonstrated excellent technical skills during his internship. 
-                        His ability to quickly learn and adapt to our POS system was impressive, 
-                        and he provided exceptional support to our clients."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Angel Maine Nicolau</h4>
-                            <span>Human Resource, LiveHelp4Us</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"As his OJT adviser, I was impressed by Benjie's dedication to learning 
-                        and his problem-solving approach. His capstone project showed great potential 
-                        and practical application."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Prof. Roche L. Cabanlit</h4>
-                            <span>MST-CS, Negros Oriental State University</span>
-                        </div>
+
+            <div class="documentary-grid">
+                <!-- Training 1 -->
+                <div class="documentary-item view-details"
+                    data-images="images/k1.jpg,images/k2.jpg,images/k3.jpg,images/k4.jpeg,images/k5.jpeg,images/k6.jpeg,images/k7.jpeg,images/k8.jpeg,images/k9.jpeg,images/k10.jpeg,images/k11.jpeg,images/k12.jpeg,images/k13.jpeg,images/k14.jpeg,images/k15.jpeg,images/k16.jpeg,images/k17.jpeg,images/k18.jpeg,images/k19.jpeg,images/k20.jpeg"
+                    data-caption="Big Data Analytics & AI Training - Hannam University, KOICA, Silliman University">
+
+                    <img src="images/k1.jpg" alt="Big Data Analytics and AI Training" class="documentary-img">
+                    <div class="documentary-info">
+                        <h3>Big Data Analytics & AI Training</h3>
+                        <p>Organized by Hannam University, KOICA, and Silliman University</p>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Benjie's Water Refilling Management System was recognized as a candidate 
-                        for Best Capstone Project. The system showed excellent functionality and 
-                        practical relevance to real-world business needs."</p>
+
+                <!-- Award -->
+                <div class="documentary-item view-details"
+                    data-images="images/bp1.jpeg,images/bp2.mp4,images/bp3.jpeg,images/bp4.jpeg"
+                    data-caption="KOICA Best Project Paper Award - Recognized for outstanding project paper">
+                    <img src="images/bp1.jpeg" alt="KOICA Best Project Paper Award" class="documentary-img">
+                    <div class="documentary-info">
+                        <h3>KOICA Best Project Paper Award</h3>
+                        <p>Recognized for outstanding project paper</p>
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Academic Committee</h4>
-                            <span>Negros Oriental State University</span>
-                        </div>
+                </div>
+
+                <!-- Certificate Example -->
+                <div class="documentary-item">
+                    <img src="images/bh10.png" alt="Certificate of Training" class="documentary-img">
+                    <div class="documentary-info">
+                        <h3>Certificate of Completion</h3>
+                        <p>Proof of achievement for specialized training programs</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -432,6 +427,9 @@
     <div id="portfolioModal" class="modal hidden">
         <span class="close-modal">&times;</span>
         <img class="modal-content" id="modalImage">
+        <video class="modal-content" id="modalVideo"></video>
+        <!-- ✅ Custom timeline -->
+        <input type="range" id="videoProgress" value="0" min="0" max="100" step="0.1" style="width:90%; display:none;">
         <div id="modalCaption"></div>
         <button id="prevBtn">&#10094;</button>
         <button id="nextBtn">&#10095;</button>

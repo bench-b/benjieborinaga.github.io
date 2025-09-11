@@ -425,13 +425,9 @@
                 </div>
 
                 <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
-                    <!-- Your Public Access Key -->
                     <input type="hidden" name="access_key" value="0e06c27b-1b63-4298-b814-782c78632ece">
+                    <input type="hidden" name="replyto" value="%email%">
 
-                    <!-- Optional: Where to redirect after success -->
-                    <input type="hidden" name="redirect" value="https://yourdomain.com/thank-you.html">
-
-                    <!-- Form Fields -->
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -451,6 +447,7 @@
 
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
+
 
             </div>
         </div>

@@ -271,6 +271,7 @@ p {
 
 .hero-description {
     font-size: 1.125rem;
+    text-align: justify;
     margin-bottom: 2rem;
     max-width: 500px;
 }
@@ -343,6 +344,7 @@ p {
 
 .about-content {
     display: grid;
+    text-align: justify;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: start;
@@ -352,6 +354,9 @@ p {
     font-size: 1.125rem;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
+}
+.about-description{
+    text-align: justify;
 }
 
 .about-stats {

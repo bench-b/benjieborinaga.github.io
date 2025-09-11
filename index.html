@@ -424,8 +424,15 @@
                     </div> -->
                 </div>
 
-                <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+                <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data"
+                    id="contact-form">
+                    <!-- Your Public Access Key -->
                     <input type="hidden" name="access_key" value="0e06c27b-1b63-4298-b814-782c78632ece">
+
+                    <!-- Optional: set recipient -->
+                    <input type="hidden" name="to" value="borinagabenjie56gmail.com">
+
+                    <!-- Optional: auto reply-to the sender -->
                     <input type="hidden" name="replyto" value="%email%">
 
                     <div class="form-group">
@@ -447,6 +454,7 @@
 
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
+
 
 
             </div>

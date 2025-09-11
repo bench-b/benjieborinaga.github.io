@@ -286,7 +286,9 @@ function initTypingAnimation() {
         'Frontend Specialist',
         'UI/UX Enthusiast',
         'Problem Solver',
-        'Technical Support'
+        'Technical Support',
+        'Data Analyst',
+        'AI & Big Data Enthusiast'
     ];
     
     let currentRole = 0;
